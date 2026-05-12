@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业官网 | 简约商务官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", Arial, sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #0a4988;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            width: 80px;
+            height: 3px;
+            background: #0a4988;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -12px;
+        }
+
+        header {
+            width: 100%;
+            background: #0a4988;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        .nav-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        .logo {
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .nav-menu {
+            display: flex;
+        }
+        .nav-menu li {
+            margin-left: 40px;
+        }
+        .nav-menu li a {
+            color: #fff;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .nav-menu li a:hover {
+            color: #74b9ff;
+        }
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(10,73,136,0.8),rgba(10,73,136,0.8)), url("images/banner.jpg") no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px;
+        }
+        .banner-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .banner-text p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            line-height: 2;
+        }
+
+        .product {
+            padding: 80px 0;
+            background: #fff;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .product-item {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .product-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .product-img {
+            width: 100%;
+            height: 220px;
+            display: block;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-info h3 {
+            font-size: 20px;
+            color: #0a4988;
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .structure {
+            padding: 80px 0;
+            background: #f1f2f6;
+        }
+        .structure-box {
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .structure-img {
+            width: 100%;
+            height: 350px;
+            background: #e9ecef;
+            margin-bottom: 30px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #666;
+            background-image: url('images/structure.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .dept-list {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+        }
+        .dept-item {
+            margin-bottom: 10px;
+        }
+        .dept-item h4 {
+            color: #0a4988;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .dept-item p {
+            color: #666;
+            font-size: 15px;
+        }
+
+        .contact {
+            padding: 80px 0 30px;
+            background: #0a4988;
+            color: #fff;
+        }
+        .contact-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .contact-item h4 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .contact-item h4::after {
+            content: "";
+            width: 50px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+        .contact-item p {
+            margin: 12px 0;
+            opacity: 0.9;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px rgba(255,255,255,0.2);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        @media (max-width:768px) {
+            .menu-btn {
+                display: block;
+            }
+            .nav-menu {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #0a4988;
+                flex-direction: column;
+                text-align: center;
+                overflow: hidden;
+                height: 0;
+                transition: 0.3s;
+            }
+            .nav-menu.active {
+                height: 240px;
+            }
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            .banner-text h1 {
+                font-size: 32px;
+            }
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+            .dept-list {
+                grid-template-columns: 1fr;
+            }
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+            .structure-img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrap">
+        <div class="logo">XX企业有限公司</div>
+        <ul class="nav-menu">
+            <li><a href="#home">首页</a></li>
+            <li><a href="#product">产品展示</a></li>
+            <li><a href="#structure">组织架构</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+        <div class="menu-btn">☰</div>
+    </div>
+</header>
+
+<section class="banner" id="home">
+    <div class="container banner-text">
+        <h1>XX企业有限公司</h1>
+        <p>专注行业领域深耕发展，秉承诚信经营、科技创新、服务至上的经营理念，致力于为客户提供高品质产品与专业解决方案。企业立足长远发展，重视技术研发与团队建设，打造行业优质品牌，携手客户共创共赢未来。</p>
+    </div>
+</section>
+
+<section class="product" id="product">
+    <div class="container">
+        <h2 class="section-title">产品展示</h2>
+        <div class="product-list">
+            <div class="product-item">
+                <img src="images/product1.jpg" class="product-img" alt="产品图片">
+                <div class="product-info">
+                    <h3>产品名称一</h3>
+                    <p>产品简短介绍：简约商务系列产品，性能稳定、质量可靠，适用于多类使用场景。</p>
+                    <p>产品详细描述：本产品采用优质原材料制作，工艺精良，节能环保，性价比高，可满足企业商用、项目配套等各类需求，支持定制化服务。</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/product2.jpg" class="product-img" alt="产品图片">
+                <div class="product-info">
+                    <h3>产品名称二</h3>
+                    <p>产品简短介绍：高端旗舰款产品，智能化设计，高效节能，性能优越。</p>
+                    <p>产品详细描述：搭载先进技术方案，运行稳定故障率低，使用寿命长，广泛应用于工业、商用等场景，是企业优选合作产品。</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/product3.jpg" class="product-img" alt="产品图片">
+                <div class="product-info">
+                    <h3>产品名称三</h3>
+                    <p>产品简短介绍：经济型实用产品，高性价比，实用百搭。</p>
+                    <p>产品详细描述：简约实用设计，操作简单易维护，适配中小型项目使用，供货稳定，售后保障完善。</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/product4.jpg" class="product-img" alt="产品图片">
+                <div class="product-info">
+                    <h3>产品名称四</h3>
+                    <p>产品简短介绍：定制专属类产品，按需定制，个性化方案。</p>
+                    <p>产品详细描述：可根据客户需求进行尺寸、功能、外观定制，专业团队一对一对接，满足个性化项目需求。</p>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="images/product5.jpg" class="product-img" alt="产品图片">
+                <div class="product-info">
+                    <h3>产品名称五</h3>
+                    <p>产品简短介绍：配套附属产品，完善配套，一站式服务。</p>
+                    <p>产品详细描述：主营产品配套配件，兼容性强，品质严格把控，完善整体产品体系，为客户提供一站式采购服务。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="structure" id="structure">
+    <div class="container">
+        <h2 class="section-title">企业组织架构</h2>
+        <div class="structure-box">
+            <div class="structure-img"></div>
+            <div class="dept-list">
+                <div class="dept-item">
+                    <h4>总经理办公室</h4>
+                    <p>统筹公司整体战略规划、经营管理、重大决策，协调各部门工作，把控企业发展方向。</p>
+                </div>
+                <div class="dept-item">
+                    <h4>研发技术部</h4>
+                    <p>负责产品研发、技术创新、方案设计、产品升级优化，提供技术支持与技术售后。</p>
+                </div>
+                <div class="dept-item">
+                    <h4>市场销售部</h4>
+                    <p>市场拓展、客户开发、产品销售、商务洽谈、品牌推广、渠道维护管理。</p>
+                </div>
+                <div class="dept-item">
+                    <h4>行政人事部</h4>
+                    <p>行政管理、人事招聘、员工管理、后勤保障、企业文化建设、规章制度落地。</p>
+                </div>
+                <div class="dept-item">
+                    <h4>生产供应链部</h4>
+                    <p>产品生产、原料采购、库存管理、质检管控、发货物流、供应链统筹管理。</p>
+                </div>
+                <div class="dept-item">
+                    <h4>财务部</h4>
+                    <p>账务管理、财务核算、成本管控、税务申报、资金管理、财务报表统计。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title" style="color:#fff">联系我们</h2>
+        <div class="contact-box">
+            <div class="contact-item">
+                <h4>公司地址</h4>
+                <p>详细公司地址：XX省XX市XX区XX街道XX产业园XX号楼</p>
+                <p>办公地址：XX省XX市XX区XX商务大厦</p>
+            </div>
+            <div class="contact-item">
+                <h4>联系方式</h4>
+                <p>联系电话：028-12345678</p>
+                <p>手机热线：13800138000</p>
+                <p>企业邮箱：service@company.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 XX企业有限公司 版权所有 | 备案号：蜀ICP12345678号
+        </div>
+    </div>
+</section>
+
+<script>
+    let menuBtn = document.querySelector('.menu-btn');
+    let navMenu = document.querySelector('.nav-menu');
+    menuBtn.onclick = function(){
+        navMenu.classList.toggle('active');
+    }
+    let navLink = document.querySelectorAll('.nav-menu li a');
+    for(let i=0;i<navLink.length;i++){
+        navLink[i].addEventListener('click',function(){
+            navMenu.classList.remove('active');
+        })
+    }
+</script>
+</body>
+</html>
