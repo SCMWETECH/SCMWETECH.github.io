@@ -133,44 +133,12 @@
             transform: translateY(-8px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
-        .product-img-box {
-            position: relative;
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-        }
         .product-img {
             width: 100%;
-            height: 100%;
-            display: none;
-            object-fit: cover;
-            cursor: zoom-in;
-        }
-        .product-img.active {
+            height: 220px;
             display: block;
+            object-fit: cover;
         }
-        .img-prev,.img-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 32px;
-            height: 32px;
-            background: rgba(0,0,0,0.5);
-            color: #fff;
-            text-align: center;
-            line-height: 32px;
-            font-size: 18px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            user-select: none;
-        }
-        .img-prev { left: 10px; }
-        .img-next { right: 10px; }
-        .img-prev:hover,.img-next:hover {
-            background: #0a4988;
-        }
-
         .product-info {
             padding: 20px;
         }
@@ -261,27 +229,9 @@
             text-align: center;
             margin-top: 50px;
             padding-top: 20px;
+            border-top: 1px rgba(255,255,255,0.2);
             font-size: 14px;
             opacity: 0.8;
-        }
-
-        .img-modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .img-modal img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
         }
 
         @media (max-width:768px) {
@@ -350,81 +300,46 @@
     <div class="container">
         <h2 class="section-title">产品展示</h2>
         <div class="product-list">
-
-            <!-- 产品1：3张图 -->
             <div class="product-item">
-                <div class="product-img-box">
-                    <span class="img-prev">&lt;</span>
-                    <span class="img-next">&gt;</span>
-                    <img src="images/products/product1/1.jpg" class="product-img active" alt="产品图">
-                    <img src="images/products/product1/2.jpg" class="product-img" alt="产品图">
-                    <img src="images/products/product1/3.jpg" class="product-img" alt="产品图">
-                </div>
+                <img src="images/product1.jpg" class="product-img" alt="产品图片">
                 <div class="product-info">
                     <h3>高压直流采样CAN模块</h3>
                     <p>产品简短介绍：简约商务系列产品，性能稳定、质量可靠，适用于多类使用场景。</p>
                     <p>产品详细描述：本产品采用优质原材料制作，工艺精良，节能环保，性价比高，可满足企业商用、项目配套等各类需求，支持定制化服务。</p>
                 </div>
             </div>
-
-            <!-- 产品2：2张图 -->
             <div class="product-item">
-                <div class="product-img-box">
-                    <span class="img-prev">&lt;</span>
-                    <span class="img-next">&gt;</span>
-                    <img src="images/products/product2/1.jpg" class="product-img active" alt="产品图">
-                    <img src="images/products/product2/2.jpg" class="product-img" alt="产品图">
-                </div>
+                <img src="images/product2.jpg" class="product-img" alt="产品图片">
                 <div class="product-info">
                     <h3>产品名称二</h3>
                     <p>产品简短介绍：高端旗舰款产品，智能化设计，高效节能，性能优越。</p>
                     <p>产品详细描述：搭载先进技术方案，运行稳定故障率低，使用寿命长，广泛应用于工业、商用等场景，是企业优选合作产品。</p>
                 </div>
             </div>
-
-            <!-- 产品3：1张图 -->
             <div class="product-item">
-                <div class="product-img-box">
-                    <span class="img-prev">&lt;</span>
-                    <span class="img-next">&gt;</span>
-                    <img src="images/products/product3/1.jpg" class="product-img active" alt="产品图">
-                </div>
+                <img src="images/product3.jpg" class="product-img" alt="产品图片">
                 <div class="product-info">
                     <h3>产品名称三</h3>
                     <p>产品简短介绍：经济型实用产品，高性价比，实用百搭。</p>
                     <p>产品详细描述：简约实用设计，操作简单易维护，适配中小型项目使用，供货稳定，售后保障完善。</p>
                 </div>
             </div>
-
-            <!-- 产品4 -->
             <div class="product-item">
-                <div class="product-img-box">
-                    <span class="img-prev">&lt;</span>
-                    <span class="img-next">&gt;</span>
-                    <img src="images/products/product4/1.jpg" class="product-img active" alt="产品图">
-                    <img src="images/products/product4/2.jpg" class="product-img" alt="产品图">
-                </div>
+                <img src="images/product4.jpg" class="product-img" alt="产品图片">
                 <div class="product-info">
                     <h3>产品名称四</h3>
                     <p>产品简短介绍：定制专属类产品，按需定制，个性化方案。</p>
                     <p>产品详细描述：可根据客户需求进行尺寸、功能、外观定制，专业团队一对一对接，满足个性化项目需求。</p>
                 </div>
             </div>
-
-            <!-- 产品5 -->
             <div class="product-item">
-                <div class="product-img-box">
-                    <span class="img-prev">&lt;</span>
-                    <span class="img-next">&gt;</span>
-                    <img src="images/products/product5/1.jpg" class="product-img active" alt="产品图">
-                </div>
+                <img src="images/product5.jpg" class="product-img" alt="产品图片">
                 <div class="product-info">
                     <h3>产品名称五</h3>
                     <p>产品简短介绍：配套附属产品，完善配套，一站式服务。</p>
                     <p>产品详细描述：主营产品配套配件，兼容性强，品质严格把控，完善整体产品体系，为客户提供一站式采购服务。</p>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -486,13 +401,7 @@
     </div>
 </section>
 
-<!-- 放大弹窗 -->
-<div class="img-modal" id="imgModal">
-    <img id="modalImg" src="" alt="放大预览">
-</div>
-
 <script>
-    // 导航菜单
     let menuBtn = document.querySelector('.menu-btn');
     let navMenu = document.querySelector('.nav-menu');
     menuBtn.onclick = function(){
@@ -504,49 +413,6 @@
             navMenu.classList.remove('active');
         })
     }
-
-    // 产品图片切换
-    document.querySelectorAll('.product-img-box').forEach(box=>{
-        let imgs = box.querySelectorAll('.product-img');
-        let idx = 0;
-        let len = imgs.length;
-        let prev = box.querySelector('.img-prev');
-        let next = box.querySelector('.img-next');
-
-        if(len <= 1){
-            prev.style.display="none";
-            next.style.display="none";
-        }
-
-        function showImg(i){
-            imgs.forEach(item=>item.classList.remove('active'));
-            imgs[i].classList.add('active');
-        }
-        prev.addEventListener('click',()=>{
-            idx = (idx-1+len)%len;
-            showImg(idx);
-        });
-        next.addEventListener('click',()=>{
-            idx = (idx+1)%len;
-            showImg(idx);
-        });
-    });
-
-    // 点击放大
-    const modal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImg');
-    document.querySelectorAll('.product-img').forEach(img=>{
-        img.addEventListener('click',()=>{
-            modal.style.display='flex';
-            modalImg.src=img.src;
-        })
-    });
-    modal.addEventListener('click',e=>{
-        if(e.target===modal||e.target===modalImg){
-            modal.style.display='none';
-        }
-    })
 </script>
-
 </body>
 </html>
